@@ -23,7 +23,6 @@ TestResults.xml
 
 logs/
 sample_files/
-__pycache__/
 encrypted_files/
 decrypted_files/
 *.encrypted
