@@ -20,9 +20,11 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
-.logs/
-.sample_files/
-.__pycache__/
-.encrypted_files/
-.descrypted_files/
+
+logs/
 sample_files/
+__pycache__/
+encrypted_files/
+decrypted_files/
+*.encrypted
+*.descrypted
