@@ -23,3 +23,5 @@ TestResults.xml
 .logs/
 .sample_files/
 .__pycache__/
+.encrypted_files/
+.descrypted_files/
