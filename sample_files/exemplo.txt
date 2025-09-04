@@ -1,3 +1,0 @@
-Este é um arquivo de exemplo para testar a criptografia AES.
-O sistema deve ser capaz de criptografar e descriptografar este arquivo.
-Data de criação: 2025-09-04
