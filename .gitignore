@@ -25,4 +25,4 @@ TestResults.xml
 .__pycache__/
 .encrypted_files/
 .descrypted_files/
-./sample_files
+sample_files/
