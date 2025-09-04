@@ -56,12 +56,13 @@ class FileManager:
             else:
                 print("Opção inválida!")
     
-    def scan_folder(self, folder_path):
+    def scan_folder(self, folder_path, silent=False):
         """
         Escaneia uma pasta em busca de arquivos suportados
         
         Args:
             folder_path (Path): Caminho da pasta a ser escaneada
+            silent (bool): Se True, não imprime saída
             
         Returns:
             list: Lista de caminhos dos arquivos encontrados
@@ -76,21 +77,23 @@ class FileManager:
             # Ordena os arquivos por nome
             files_found.sort()
             
-            print(f"\n📋 ARQUIVOS ENCONTRADOS")
-            print("-" * 25)
-            
-            if files_found:
-                for i, file_path in enumerate(files_found, 1):
-                    file_size = self._format_file_size(Path(file_path).stat().st_size)
-                    print(f"{i:2d}. {Path(file_path).name} ({file_size})")
-            else:
-                print("Nenhum arquivo suportado encontrado.")
-                print(f"Extensões suportadas: {', '.join(sorted(self.supported_extensions))}")
+            if not silent:
+                print(f"\n📋 ARQUIVOS ENCONTRADOS")
+                print("-" * 25)
+                
+                if files_found:
+                    for i, file_path in enumerate(files_found, 1):
+                        file_size = self._format_file_size(Path(file_path).stat().st_size)
+                        print(f"{i:2d}. {Path(file_path).name} ({file_size})")
+                else:
+                    print("Nenhum arquivo suportado encontrado.")
+                    print(f"Extensões suportadas: {', '.join(sorted(self.supported_extensions))}")
             
             return files_found
             
         except Exception as e:
-            print(f"Erro ao escanear pasta: {e}")
+            if not silent:
+                print(f"Erro ao escanear pasta: {e}")
             return []
     
     def create_backup_folder(self):
