@@ -70,36 +70,7 @@ def check_python_version():
     print("  ✓ Versão do Python compatível")
     return True
 
-def create_sample_files():
-    """Cria arquivos de exemplo para testar o sistema"""
-    sample_dir = Path("sample_files")
-    sample_dir.mkdir(exist_ok=True)
     
-    # Arquivo de texto simples
-    with open(sample_dir / "exemplo.txt", "w", encoding="utf-8") as f:
-        f.write("Este é um arquivo de exemplo para testar a criptografia AES.\n")
-        f.write("O sistema deve ser capaz de criptografar e descriptografar este arquivo.\n")
-        f.write("Data de criação: 2025-09-04\n")
-    
-    # Arquivo JSON
-    import json
-    sample_data = {
-        "nome": "Sistema de Criptografia AES",
-        "versao": "1.0.0",
-        "autor": "Claude Assistant", 
-        "recursos": [
-            "Criptografia AES-256",
-            "Interface de linha de comando",
-            "Backup automático",
-            "Logs detalhados"
-        ]
-    }
-    
-    with open(sample_dir / "config.json", "w", encoding="utf-8") as f:
-        json.dump(sample_data, f, indent=2, ensure_ascii=False)
-    
-    print(f"\n📄 Arquivos de exemplo criados em: {sample_dir}")
-
 def main():
     """Função principal de configuração"""
     print("=" * 60)
